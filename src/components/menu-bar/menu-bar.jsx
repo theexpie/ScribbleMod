@@ -76,7 +76,6 @@ import collectMetadata from '../../lib/collect-metadata';
 
 import styles from './menu-bar.css';
 
-import helpIcon from '../../lib/assets/icon--tutorials.svg';
 import mystuffIcon from './icon--mystuff.png';
 import profileIcon from './icon--profile.png';
 import remixIcon from './icon--remix.svg';
@@ -86,7 +85,6 @@ import fileIcon from './icon--file.svg';
 import editIcon from './icon--edit.svg';
 import debugIcon from '../debug-modal/icons/icon--debug.svg';
 
-import scratchLogo from './scratch-logo.svg';
 import ninetiesLogo from './nineties_logo.svg';
 import catLogo from './cat_logo.svg';
 import prehistoricLogo from './prehistoric-logo.svg';
@@ -433,7 +431,7 @@ class MenuBar extends React.Component {
                         <div className={classNames(styles.menuBarItem)}>
                             <img
                                 id="logo_img"
-                                alt="Scratch"
+                                alt="ScribbleMod"
                                 className={classNames(styles.scratchLogo, {
                                     [styles.clickable]: typeof this.props.onClickLogo !== 'undefined'
                                 })}
@@ -695,21 +693,6 @@ class MenuBar extends React.Component {
                     <Divider className={classNames(styles.divider)} />
                     <div className={styles.fileGroup}>
                         <div
-                            aria-label={this.props.intl.formatMessage(ariaMessages.tutorials)}
-                            className={
-                                classNames(styles.menuBarItem, styles.noOffset, styles.hoverable, 'tutorials-button')
-                            }
-                            onClick={this.props.onOpenTipLibrary}
-                        >
-                            <img
-                                className={styles.helpIcon}
-                                src={helpIcon}
-                            />
-                            <span className={styles.tutorialsLabel}>
-                                <FormattedMessage {...ariaMessages.tutorials} />
-                            </span>
-                        </div>
-                        <div
                             aria-label={this.props.intl.formatMessage(ariaMessages.debug)}
                             className={classNames(styles.menuBarItem, styles.noOffset, styles.hoverable)}
                             onClick={this.props.onOpenDebugModal}
@@ -948,7 +931,7 @@ MenuBar.propTypes = {
 };
 
 MenuBar.defaultProps = {
-    logo: scratchLogo,
+    logo: '/static/scribblemod-logo.svg',
     onShare: () => {}
 };
 
